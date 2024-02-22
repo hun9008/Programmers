@@ -5,7 +5,7 @@
 using namespace std;
 int dp[101][201];
 
-int INF = 987654321;
+int INF = 1000;
 void init()
 {
     for(int i = 0; i < 101; i++)
@@ -29,12 +29,12 @@ int solution(int n, int m, vector<vector<int>> edge_list, int k, vector<int> gps
     }
     init();
     dp[1][gps_log[0]] = 0;
-    for(int t = 2; t <= k; ++t)
+    for(int t = 2; t <= k; t++)
     {
-        for(int pos = 1; pos <= n; ++pos)
+        for(int pos = 1; pos <= n; pos++)
         {
             int minError = dp[t-1][pos];
-            for(int i = 0; i < adj[pos].size(); ++i)
+            for(int i = 0; i < adj[pos].size(); i++)
             {
                 minError = min(dp[t-1][adj[pos][i]], minError);
             }
