@@ -43,10 +43,12 @@ int main(){
     sort(input.begin(), input.end(), comp);
 
     long long sum = 0;
-    long long sum_color[200001];
-    long long sum_size[200001];
-    memset(sum_color, 0, 200001);
-    memset(sum_size, 0, 200001);
+    // long long sum_color[200001];
+    // long long sum_size[200001];
+    // memset(sum_color, 0, 200001);
+    // memset(sum_size, 0, 200001);
+    vector<int> sum_color (200001, 0);
+    vector<int> sum_size (2001, 0);
     for(int i = 0; i < n; i++)
     {
         int index = input[i].idx;
